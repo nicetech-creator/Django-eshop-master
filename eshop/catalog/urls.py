@@ -5,6 +5,5 @@ app_name = 'catalog'
 
 urlpatterns = [
     # post views
-    path('', views.index, name='post_list'),
-   
+    path('', views.index, name='index'),
 ]

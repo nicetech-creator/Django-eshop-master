@@ -16,7 +16,7 @@
     <meta name="author" content="Nghia Minh Luong">
     <meta name="keywords" content="Default Description">
     <meta name="description" content="Default keyword">
-    <title>Sky - Homepage</title>
+    <title>{{page_title}}</title>
     <!-- Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow:300,400,700%7CMontserrat:300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'plugins/font-awesome/css/font-awesome.min.css' %}">
@@ -647,7 +647,7 @@
           </div>
         </div>
       </div>
-      <div class="ps-home-testimonial bg--parallax pb-80" data-background="images/background/parallax.jpg">
+      <div class="ps-home-testimonial bg--parallax pb-80" data-background="{% static 'images/background/parallax.jpg' %}">
         <div class="container">
           <div class="owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="0" data-owl-nav="false" data-owl-dots="true" data-owl-item="1" data-owl-item-xs="1" data-owl-item-sm="1" data-owl-item-md="1" data-owl-item-lg="1" data-owl-duration="1000" data-owl-mousedrag="on" data-owl-animate-in="fadeIn" data-owl-animate-out="fadeOut">
             <div class="ps-testimonial">
@@ -786,7 +786,7 @@
           </div>
         </div>
       </div>
-      <div class="ps-footer bg--cover" data-background="images/background/parallax.jpg">
+      <div class="ps-footer bg--cover" data-background="{static 'images/background/parallax.jpg'}">
         <div class="ps-footer__content">
           <div class="ps-container">
             <div class="row">

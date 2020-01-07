@@ -64,6 +64,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'utils.context_processors.ecomstore',
             ],
         },
     },
@@ -120,3 +121,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+SITE_NAME = 'E-Shop Master'
+META_KEYWORDS = 'ecommerce, POC, payment integration, real-time chart'
+META_DESCRIPTION = 'E-Shop Master is a proficient Djanog Ecommerce project with bunch of modern techs.'
