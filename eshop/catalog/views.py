@@ -1,8 +1,11 @@
 from django.shortcuts import render, get_object_or_404
 from django.template import RequestContext
+from .models import Category, Product
 
 # Create your views here.
 def index(request, template_name="index.html"):
+    categories = Category.objects.all()
+    products = Product.objects.all()
     page_title = 'E-Shop Master'
     return render(request, template_name=template_name, context = locals())
 

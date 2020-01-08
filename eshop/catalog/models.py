@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class Category(models.Model):
@@ -14,11 +15,12 @@ class Category(models.Model):
         db_table = 'categories'
         ordering = ['-created_at']
         verbose_name_plural = 'Categories'
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     def get_absolute_url(self):
-        return ('catalog_category', (), { 'category_slug': self.slug })
+        return reverse('catalog:catalog_category',
+            args=[self.slug])
 
 class Product(models.Model):
     name = models.CharField(max_length=255, unique=True)
@@ -43,11 +45,12 @@ class Product(models.Model):
         db_table = 'products'
         ordering = ['-created_at']
     
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     def get_absolute_url(self):
-        return ('catalog_product', (), { 'product_slug': self.slug })
+        return reverse('catalog:catalog_product',
+            args=[self.slug])
     
     def sale_price(self):
         if self.old_price > self.price:
