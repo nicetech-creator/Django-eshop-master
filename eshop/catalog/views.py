@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.template import RequestContext
 from .models import Category, Product
+from cart import cart
+from django.http import JsonResponse
 
 # Create your views here.
 def index(request, template_name="index.html"):
@@ -23,4 +25,11 @@ def show_product(request, product_slug, template_name="product.html"):
     page_title = p.name
     meta_keywords = p.meta_keywords
     meta_description = p.meta_description
-    return render(request, template_name=template_name, context = locals())
+    if request.method == 'POST':
+        cart.add_to_cart(request)
+        data = {
+            'message': 'added successfully',
+        }
+        return JsonResponse(data)
+    else:
+        return render(request, template_name=template_name, context = locals())

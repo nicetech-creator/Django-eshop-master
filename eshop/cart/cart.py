@@ -50,6 +50,7 @@ def add_to_cart(request):
         ci.quantity = quantity
         ci.cart_id = _cart_id(request)
         ci.save()
+    print ("item added")
 
 # returns the total number of items in the user's cart
 def cart_distinct_item_count(request):
